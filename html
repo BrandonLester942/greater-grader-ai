@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Greater Grader AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span id="botEmoji" class="brand-emoji"></span>
+      <div>
+        <h1 id="botName"></h1>
+        <p id="botTagline"></p>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="keyBtn" class="btn" type="button">🔑 API key</button>
+      <button id="newChatBtn" class="btn" type="button">New chat</button>
+    </div>
+  </header>
+
+  <main id="chat" class="chat" aria-live="polite"></main>
+
+  <div id="starters" class="starters"></div>
+
+  <footer class="composer-wrap">
+    <div id="fileChip" class="file-chip" hidden>
+      <span id="fileName"></span>
+      <button id="removeFile" type="button" aria-label="Remove attachment">✕</button>
+    </div>
+    <div class="composer">
+      <button id="attachBtn" class="icon-btn" type="button" title="Attach essay (.txt, .md, .pdf)">📎</button>
+      <input id="fileInput" type="file" accept=".txt,.md,.pdf,text/plain,application/pdf" hidden />
+      <textarea id="input" rows="1" placeholder="Paste your essay or type a question…"></textarea>
+      <button id="sendBtn" class="send-btn" type="button">Send</button>
+    </div>
+    <p class="hint">Enter to send · Shift+Enter for a new line</p>
+  </footer>
+
+  <!-- API key pop-up -->
+  <div id="keyModal" class="modal-backdrop" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="keyTitle">
+      <h2 id="keyTitle">Your Gemini API key</h2>
+      <p>Paste your key below. It is stored only in your browser and is never written into the website's code.</p>
+      <input id="keyInput" type="password" placeholder="Paste API key here" autocomplete="off" />
+      <label class="remember">
+        <input id="rememberBox" type="checkbox" /> Remember on this device
+      </label>
+      <div class="modal-actions">
+        <button id="keyClear" class="btn" type="button">Remove key</button>
+        <button id="keyCancel" class="btn" type="button">Cancel</button>
+        <button id="keySave" class="btn primary" type="button">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
