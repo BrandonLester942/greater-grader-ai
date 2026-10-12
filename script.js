@@ -23,6 +23,23 @@ $("botEmoji").textContent = BOT_CONFIG.emoji;
 $("botName").textContent = BOT_CONFIG.name;
 $("botTagline").textContent = BOT_CONFIG.tagline;
 
+/* ---------- Light / dark switch ---------- */
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  $("themeBtn").textContent = theme === "dark" ? "☀️ Light" : "🌙 Dark";
+}
+
+let savedTheme = null;
+try { savedTheme = localStorage.getItem("theme"); } catch (e) {}
+const systemPrefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+applyTheme(savedTheme || (systemPrefersDark ? "dark" : "light"));
+
+$("themeBtn").addEventListener("click", () => {
+  const current = document.documentElement.getAttribute("data-theme");
+  const next = current === "dark" ? "light" : "dark";
+  applyTheme(next);
+  try { localStorage.setItem("theme", next); } catch (e) {}
+});
 /* ---------- Safe storage helpers ---------- */
 function getKey() {
   try {
