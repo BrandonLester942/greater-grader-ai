@@ -33,9 +33,9 @@ Use **bold** for headings and "- " bullet lists to keep feedback easy to read.
 
   // The three buttons shown above the message box in a new chat.
   starterQuestions: [
-    "Can you grade this essay?",
-    "What improvements can I make in this essay?",
-    "How do I make this essay sound more sophisticated/Professional?"
+    "How do I create a good essay?",
+    "What is the basic structure I should use to write an essay?",
+    "How do I make an essay sound more sophisticated/Professional?"
   ],
 
   // Which Gemini model to use. If you get a "model not found" error, change this.
