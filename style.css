@@ -64,6 +64,16 @@ body {
 .btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
 .btn:hover { filter: brightness(1.08); }
 
+/* Notes status line (under the header) */
+.status {
+  padding: 6px 16px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
 /* Chat area */
 .chat {
   flex: 1;
@@ -92,6 +102,18 @@ body {
 .msg p:last-child, .msg ul:last-child { margin-bottom: 0; }
 .msg ul { margin: 0 0 8px; padding-left: 20px; }
 .msg .attach-note { display: inline-block; margin-bottom: 6px; padding: 2px 8px; font-size: 0.8rem; background: rgba(255, 255, 255, 0.22); border-radius: 8px; }
+
+/* Sources section under bot replies */
+.sources {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82rem;
+}
+.sources summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+.source-item { margin-top: 8px; }
+.source-head { font-weight: 600; }
+.source-text { color: var(--muted); }
 
 /* Thinking animation */
 .thinking { display: inline-flex; gap: 5px; padding: 4px 0; }
