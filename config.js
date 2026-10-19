@@ -42,5 +42,32 @@ Use **bold** for headings and "- " bullet lists to keep feedback easy to read.
   model: "gemini-flash-latest",
 
   // The main color of the page (a hex color code).
-  themeColor: "#008080"
+  themeColor: "#008080",
+
+  // ------------------------------------------------------------
+  //  KNOWLEDGE SETTINGS (answers from your own notes)
+  // ------------------------------------------------------------
+
+  // true = the bot looks in your notes file before answering.
+  // false = the bot works exactly as it did before (no notes).
+  useKnowledge: true,
+
+  // The name of your notes file. It must sit in the same place as index.html.
+  knowledgeFile: "knowledge.md",
+
+  // How the bot finds the right notes:
+  //   "meaning"  = matches by meaning, so different wording still works (needs your API key)
+  //   "keywords" = matches by the words you use (simple and always works)
+  // If "meaning" fails, the bot switches to keywords by itself.
+  searchMethod: "meaning",
+
+  // How many notes to give the AI for each question (3 is a good start).
+  topK: 3,
+
+  // The Gemini model that turns notes into numbers for "meaning" search.
+  // Only change this if Google renames the model.
+  embeddingModel: "gemini-embedding-2",
+
+  // Extra rules about using your notes. These are added to the bot's rules above.
+  knowledgeRules: `You will receive NOTES from my knowledge file along with each question. If the notes answer the question, base your answer on them and cite the note numbers like [1]. If they don't, begin with 'I couldn't find that in my notes.' Never invent facts, dates, rules or policies that are not in the notes.`
 };
